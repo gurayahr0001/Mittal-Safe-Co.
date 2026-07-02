@@ -1,0 +1,838 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mittal Safe Company | Premium Multi-Brand Electronics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-main: #ffffff;
+            --bg-light: #f8fafc;
+            --bg-card: #ffffff;
+            --primary-blue: #0f4c81;       /* Deep Luxury Blue */
+            --primary-blue-hover: #1d6fa5;
+            --accent-red: #d9383a;         /* Striking Accent Crimson Red */
+            --text-dark: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --shadow: rgba(15, 76, 129, 0.08);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg-main);
+            color: var(--text-dark);
+            overflow-x: hidden;
+        }
+
+        /* --- Navigation Bar --- */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(12px);
+            z-index: 1000;
+            border-bottom: 1px solid var(--border-color);
+            box-shadow: 0 2px 20px rgba(0,0,0,0.02);
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        /* Logo Configuration */
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            text-decoration: none;
+        }
+
+        .logo-img {
+            width: 40px;
+            height: 40px;
+            object-fit: contain;
+            border-radius: 6px;
+        }
+
+        
+
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--text-dark);
+            text-decoration: none;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-red);
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 0.75rem;
+        }
+
+        .btn-contact {
+            padding: 0.6rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .btn-call {
+            background: var(--accent-red);
+            color: #ffffff;
+        }
+
+        .btn-call:hover {
+            background: #be292b;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(217, 56, 58, 0.2);
+        }
+
+        .btn-email {
+            background: transparent;
+            color: var(--primary-blue);
+            border: 1px solid var(--primary-blue);
+        }
+
+        .btn-email:hover {
+            background: var(--primary-blue);
+            color: #ffffff;
+            transform: translateY(-2px);
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 8rem 2rem 4rem 2rem;
+            background: radial-gradient(circle at center, #f0f7ff 0%, #ffffff 100%);
+            position: relative;
+        }
+
+        .hero-content {
+            max-width: 850px;
+            z-index: 1;
+        }
+
+        .badge {
+            background: rgba(15, 76, 129, 0.06);
+            color: var(--primary-blue);
+            padding: 0.5rem 1.2rem;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(15, 76, 129, 0.1);
+        }
+
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            color: var(--primary-blue);
+        }
+
+        .hero p {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            font-weight: 400;
+        }
+
+        /* --- Brands Banner --- */
+        .brands-section {
+            padding: 2.5rem 2rem;
+            background: var(--bg-light);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            text-align: center;
+        }
+   
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            color: var(--primary-blue);
+        }
+
+        .logo-text span {
+            color: var(--accent-red);
+        }
+        .brands-title {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            color: var(--text-muted);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .brands-grid {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 4.5rem;
+            flex-wrap: wrap;
+        }
+
+        .brand-item {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: #94a3b8;
+            letter-spacing: 1px;
+        }
+
+        /* --- Categories & Product Views --- */
+        .categories {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 6rem 2rem;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--text-muted);
+            font-size: 1.05rem;
+        }
+
+        .grid-categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+
+        .cat-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border-color);
+            border-radius: 16px;
+            padding: 3rem 2rem;
+            text-align: center;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 4px 20px var(--shadow);
+        }
+
+        .cat-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--primary-blue);
+            box-shadow: 0 12px 30px rgba(15, 76, 129, 0.15);
+        }
+
+        .cat-icon {
+            font-size: 2.5rem;
+            color: var(--accent-red);
+            margin-bottom: 1.5rem;
+        }
+
+        .cat-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            color: var(--primary-blue);
+        }
+
+        .cat-card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        /* --- About Section --- */
+        .about-section {
+            background: var(--bg-light);
+            padding: 6rem 2rem;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .about-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .about-text h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--primary-blue);
+            margin-bottom: 1.5rem;
+        }
+
+        .about-text p {
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            font-size: 1.05rem;
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .stat-box {
+            background: var(--bg-main);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+        }
+
+        .stat-box h3 {
+            font-size: 2.2rem;
+            color: var(--accent-red);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-box p {
+            color: var(--text-dark);
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        /* --- Admin Portal Styles --- */
+        #admin-panel {
+            max-width: 1200px;
+            margin: 4rem auto 0 auto;
+            padding: 2rem;
+        }
+
+        .admin-box {
+            background: #fff5f5;
+            border: 1px dashed var(--accent-red);
+            border-radius: 16px;
+            padding: 2.5rem;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background: #091a2b;
+            color: #ffffff;
+            padding: 5rem 2rem 2rem 2rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 2rem;
+            text-align: center;
+        }
+
+        .footer-cta {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 1rem;
+        }
+
+        .footer-cta .btn-call {
+            background: var(--accent-red);
+        }
+
+        .footer-cta .btn-email {
+            border-color: #ffffff;
+            color: #ffffff;
+        }
+
+        .footer-cta .btn-email:hover {
+            background: #ffffff;
+            color: #091a2b;
+        }
+
+        /* Dynamic Social Icon Layout styling */
+        .footer-socials {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        .social-icon {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #94a3b8;
+            border-radius: 50%;
+            font-size: 1.2rem;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .social-icon:hover {
+            color: #ffffff;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        /* Specific Brand Accent Hover Styles */
+        .social-icon.whatsapp:hover {
+            background: #25D366;
+            border-color: #25D366;
+        }
+
+        .social-icon.instagram:hover {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            border-color: #e6683c;
+        }
+
+        .social-icon.facebook:hover {
+            background: #1877F2;
+            border-color: #1877F2;
+        }
+
+        .copyright {
+            margin-top: 3rem;
+            color: #64748b;
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            width: 100%;
+            padding-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+            .about-container { grid-template-columns: 1fr; gap: 2rem; }
+            .hero h1 { font-size: 2.3rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="nav-container">
+            <a href="#" class="logo-wrapper">
+                <img src="C:\Users\Hp\OneDrive\Documents\mittal.logo.png" alt="Mittal Safe Logo" class="logo-img">
+                <div class="logo-text">MITTAL<span>SAFE</span></div>
+            </a>
+            
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#categories">Collections</a></li>
+                <li><a href="#about">About</a></li>
+            </ul>
+
+            <div class="cta-buttons">
+                <a href="tel:+1234567890" class="btn-contact btn-call">
+                    <i class="fa-solid fa-phone"></i> Call Now
+                </a>
+                <a href="mailto:info@mittalsafe.com?subject=Inquiry" class="btn-contact btn-email">
+                    <i class="fa-solid fa-envelope"></i> Email Us
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <div class="badge">Authorized Multi-Brand Retailer</div>
+            <h1>World-Class Electronics.<br>Tailored Architectural Integration.</h1>
+            <p>Mittal Safe Company orchestrates absolute luxury across premium custom displays, acoustic sound arrays, and next-generation smart home utility systems.</p>
+            <div style="display: inline-flex;">
+                 <a href="tel:+1234567890" class="btn-contact btn-call" style="padding: 1rem 2.5rem; font-size: 1rem;">
+                    <i class="fa-solid fa-phone"></i> Connect with an Expert
+                 </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="brands-section">
+        <div class="brands-title">Elite Structural Partners</div>
+        <div class="brands-grid">
+            <div class="brand-item" style="color: #1e293b; font-weight: 800;">SONY</div>
+            <div class="brand-item" style="color: #034ea2; font-weight: 800;">SAMSUNG</div>
+            <div class="brand-item" style="color: #000000; font-weight: 800;">APPLE</div>
+            <div class="brand-item" style="color: #1a1a1a; font-weight: 800;">BOSE</div>
+            <div class="brand-item" style="color: #a50034; font-weight: 800;">LG</div>
+        </div>
+    </section>
+
+    <section id="admin-panel" style="display: none;">
+        <div class="admin-box">
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+                <h2 style="font-family: 'Playfair Display', serif; font-size: 1.6rem; color: var(--accent-red); margin: 0;">
+                    <i class="fa-solid fa-unlock-keyhole"></i> Control Console
+                </h2>
+                <button id="close-admin" style="background: transparent; border: 1px solid var(--accent-red); color: var(--accent-red); padding: 0.4rem 1.2rem; border-radius: 50px; cursor: pointer; font-size: 0.85rem; font-weight: 600;">
+                    Hide Panel
+                </button>
+            </div>
+            
+            <form id="upload-product-form" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem;">
+                <div style="grid-column: span 2;">
+                    <label style="display: block; font-size: 0.9rem; margin-bottom: 0.5rem; color: var(--text-dark); font-weight: 600;">Category</label>
+                    <select id="form-category" required style="width: 100%; padding: 0.8rem; border: 1px solid var(--border-color); border-radius: 8px; font-size: 0.95rem;">
+                        <option value="oled">OLED & Cinema Displays</option>
+                        <option value="audio">Audiophile Sound Systems</option>
+                        <option value="appliances">Luxury Smart Appliances</option>
+                    </select>
+                </div>
+                <div>
+                    <label style="display: block; font-size: 0.9rem; margin-bottom: 0.5rem; color: var(--text-dark); font-weight: 600;">Product Title</label>
+                    <input type="text" id="form-title" placeholder="e.g., Sony BRAVIA Model" required style="width: 100%; padding: 0.8rem; border: 1px solid var(--border-color); border-radius: 8px;">
+                </div>
+                <div>
+                    <label style="display: block; font-size: 0.9rem; margin-bottom: 0.5rem; color: var(--text-dark); font-weight: 600;">Images (Multiple selection allowed)</label>
+                    <input type="file" id="form-images" accept="image/*" multiple required style="width: 100%; padding: 0.6rem; border: 1px solid var(--border-color); border-radius: 8px;">
+                </div>
+                <div style="grid-column: span 2;">
+                    <label style="display: block; font-size: 0.9rem; margin-bottom: 0.5rem; color: var(--text-dark); font-weight: 600;">Product Highlights</label>
+                    <textarea id="form-desc" rows="3" placeholder="Enter tech descriptions..." required style="width: 100%; padding: 0.8rem; border: 1px solid var(--border-color); border-radius: 8px; resize: vertical;"></textarea>
+                </div>
+                <div style="grid-column: span 2; text-align: right;">
+                    <button type="submit" style="background: var(--primary-blue); color: #fff; border: none; padding: 0.8rem 2.5rem; border-radius: 50px; font-weight: 600; cursor: pointer;">
+                        Add Product Item
+                    </button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <section class="categories" id="categories">
+        <div id="category-main-view">
+            <div class="section-header">
+                <h2>Explore Handpicked Masterpieces</h2>
+                <p>Click any domain below to browse high-definition products and custom technical build configurations.</p>
+            </div>
+            
+            <div class="grid-categories">
+                <div class="cat-card" data-category="oled" style="cursor: pointer;">
+                    <div class="cat-icon"><i class="fa-solid fa-tv"></i></div>
+                    <h3>OLED & Cinema Displays</h3>
+                    <p>Immerse yourself in cinematic brilliance with top-tier screens from Sony, LG, and Samsung.</p>
+                </div>
+                <div class="cat-card" data-category="audio" style="cursor: pointer;">
+                    <div class="cat-icon"><i class="fa-solid fa-volume-high"></i></div>
+                    <h3>Audiophile Sound Systems</h3>
+                    <p>Experience pure acoustics with wireless soundbars, custom home theaters, and elite sound systems.</p>
+                </div>
+                <div class="cat-card" data-category="appliances" style="cursor: pointer;">
+                    <div class="cat-icon"><i class="fa-solid fa-kitchen-set"></i></div>
+                    <h3>Luxury Smart Appliances</h3>
+                    <p>Intelligent, energy-efficient bespoke setups that reshape modern luxury living spaces.</p>
+                </div>
+            </div>
+        </div>
+
+        <div id="product-page-view" style="display: none; opacity: 0; transition: opacity 0.4s ease;">
+            <button id="back-to-categories" style="background: transparent; color: var(--primary-blue); border: 1px solid var(--primary-blue); padding: 0.6rem 1.5rem; border-radius: 50px; cursor: pointer; margin-bottom: 2.5rem; font-weight: 600;">
+                <i class="fa-solid fa-arrow-left"></i> Back to Collections
+            </button>
+            <h2 id="product-page-title" style="font-family: 'Playfair Display', serif; font-size: 2.4rem; color: var(--primary-blue); margin-bottom: 2rem;"></h2>
+            <div id="products-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(310px, 1fr)); gap: 2.5rem;"></div>
+        </div>
+    </section>
+
+    <section class="about-section" id="about">
+        <div class="about-container">
+            <div class="about-text">
+                <h2>Legacy of Precision.<br>Standard of Excellence.</h2>
+                <p>For decades, Mittal Safe Company has served as the premier choice for tech enthusiasts and homeowners seeking premium electronics. We bridge the gap between high-performance technology and aesthetic luxury.</p>
+                <p>We provide comprehensive tailored technology sourcing, personalized audio engineering consulting, and flawless delivery to ensure your premium spaces look and sound incredible.</p>
+            </div>
+            <div class="about-stats">
+                <div class="stat-box">
+                    <h3>25+</h3>
+                    <p>Years of Trusted Service</p>
+                </div>
+                <div class="stat-box">
+                    <h3>15K+</h3>
+                    <p>Premium Installs Delivered</p>
+                </div>
+                <div class="stat-box">
+                    <h3>100%</h3>
+                    <p>Authorized Brand Authenticity</p>
+                </div>
+                <div class="stat-box">
+                    <h3>24/7</h3>
+                    <p>Expert Support Access</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="logo-text" style="color: #fff; font-size: 1.8rem;">MITTAL<span>SAFE</span></div>
+            <p style="color: #94a3b8; max-width: 550px; font-size: 0.95rem; line-height: 1.6;">
+                Uncompromising luxury electronic distributions. Reach out directly via our dynamic support lines below to source quote specifications.
+            </p>
+            <div class="footer-cta">
+                <a href="tel:+1234567890" class="btn-contact btn-call">
+                    <i class="fa-solid fa-phone"></i> +1 (234) 567-890
+                </a>
+                <a href="mailto:info@mittalsafe.com?subject=Inquiry" class="btn-contact btn-email">
+                    <i class="fa-solid fa-envelope"></i> info@mittalsafe.com
+                </a>
+            </div>
+            <div class="footer-socials">
+                <a href="https://wa.me/1234567890" target="_blank" class="social-icon whatsapp" title="Chat on WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+                <a href="https://instagram.com/mittalsafe" target="_blank" class="social-icon instagram" title="Follow on Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+                <a href="https://facebook.com/mittalsafe" target="_blank" class="social-icon facebook" title="Connect on Facebook">
+                    <i class="fa-brands fa-facebook-f"></i>
+                </a>
+            </div>
+            <div class="copyright">
+                &copy; 2026 Mittal Safe Company. Engineered for luxury retail spaces<span id="secret-admin-link" style="cursor: default; color: #091a2b;">.</span>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // 1. Initial Structural Product Data List
+            let productsData = {
+                oled: {
+                    title: "OLED & Cinema Displays Collection",
+                    items: [
+                        {
+                            name: "Sony BRAVIA XR A95L QD-OLED",
+                            desc: "The absolute peak of high-end consumer display platforms. Quantum Dot configuration offering pure contrast accuracy.",
+                            img: "https://images.unsplash.com/photo-1593305841991-05c297ba4575?auto=format&fit=crop&q=80&w=600"
+                        },
+                        {
+                            name: "LG OLED evo G4 Gallery Setup",
+                            desc: "Designed to install flush to flat surfaces mimicking framed art. Built with modern dynamic high-efficiency brightness capabilities.",
+                            img: "https://images.unsplash.com/photo-1558885561-56c2a4e2f3bc?auto=format&fit=crop&q=80&w=600"
+                        }
+                    ]
+                },
+                audio: {
+                    title: "Audiophile Sound Systems",
+                    items: [
+                        {
+                            name: "Bose Smart Ultra Atmos Soundbar Array",
+                            desc: "State-of-the-art computational directional spatial tuning mapping audio tracks around modern design floor plans seamlessly.",
+                            img: "https://images.unsplash.com/photo-1545454675-3531b543be5d?auto=format&fit=crop&q=80&w=600"
+                        }
+                    ]
+                },
+                appliances: {
+                    title: "Luxury Smart Appliances",
+                    items: [
+                        {
+                            name: "Samsung Bespoke Smart Flex Refrigerator",
+                            desc: "Independently zoned smart cold distribution centers wrapped behind interchangeable designer panels.",
+                            img: "https://images.unsplash.com/photo-1571175432247-79f9024f0c74?auto=format&fit=crop&q=80&w=600"
+                        }
+                    ]
+                }
+            };
+
+            // 2. Element References
+            const mainView = document.getElementById("category-main-view");
+            const productView = document.getElementById("product-page-view");
+            const productsGrid = document.getElementById("products-grid");
+            const pageTitle = document.getElementById("product-page-title");
+            const backBtn = document.getElementById("back-to-categories");
+            
+            const adminPanel = document.getElementById("admin-panel");
+            const secretLink = document.getElementById("secret-admin-link");
+            const closeBtn = document.getElementById("close-admin");
+            const uploadForm = document.getElementById("upload-product-form");
+
+            let currentCategory = "";
+
+            // 3. Dynamic Product Page Layout Grid Generation Engine
+            function showCategoryProducts(categoryKey) {
+                currentCategory = categoryKey;
+                const targetData = productsData[categoryKey];
+                if (!targetData) return;
+
+                productsGrid.innerHTML = "";
+                pageTitle.textContent = targetData.title;
+
+                const isAdminModeActive = (adminPanel.style.display === "block");
+
+                targetData.items.forEach((product, index) => {
+                    const productCard = document.createElement("div");
+                    productCard.style.cssText = `
+                        background: var(--bg-card);
+                        border: 1px solid var(--border-color);
+                        border-radius: 16px;
+                        overflow: hidden;
+                        box-shadow: 0 4px 15px var(--shadow);
+                        position: relative;
+                    `;
+
+                    const visualAsset = Array.isArray(product.img) ? product.img[0] : product.img;
+
+                    productCard.innerHTML = `
+                        ${isAdminModeActive ? `
+                            <button class="admin-delete-btn" data-index="${index}" style="position: absolute; top: 15px; right: 15px; background: var(--accent-red); color: #fff; border: none; width: 35px; height: 35px; border-radius: 50%; cursor: pointer; z-index: 10; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.15); transition: transform 0.2s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+                                <i class="fa-solid fa-trash-can" style="pointer-events: none;"></i>
+                            </button>
+                        ` : ''}
+                        <div style="width: 100%; height: 220px; overflow: hidden; position: relative;">
+                            <img src="${visualAsset}" alt="${product.name}" style="width: 100%; height: 100%; object-fit: cover;">
+                            ${Array.isArray(product.img) && product.img.length > 1 ? `<span style="position: absolute; bottom: 10px; right: 10px; background: rgba(15,76,129,0.85); font-size: 0.75rem; padding: 2px 8px; border-radius: 4px; color: #fff; font-weight:600;">+${product.img.length - 1} Images</span>` : ''}
+                        </div>
+                        <div style="padding: 1.5rem;">
+                            <h3 style="font-size: 1.2rem; margin-bottom: 0.5rem; color: var(--primary-blue); font-weight:700;">${product.name}</h3>
+                            <p style="color: var(--text-muted); font-size: 0.9rem; line-height: 1.6; margin-bottom: 1.5rem;">${product.desc}</p>
+                            <a href="tel:+1234567890" style="display: inline-flex; align-items: center; gap: 6px; color: var(--accent-red); text-decoration: none; font-weight: 700; font-size: 0.9rem;">
+                                <i class="fa-solid fa-phone"></i> Inquire Price
+                            </a>
+                        </div>
+                    `;
+                    productsGrid.appendChild(productCard);
+                });
+
+                // Attach dynamic deletion click hooks
+                productsGrid.querySelectorAll(".admin-delete-btn").forEach(btn => {
+                    btn.addEventListener("click", (e) => {
+                        const targetIdx = e.target.getAttribute("data-index");
+                        if (confirm("Remove item entry permanently from catalogue list?")) {
+                            productsData[categoryKey].items.splice(targetIdx, 1);
+                            showCategoryProducts(categoryKey);
+                        }
+                    });
+                });
+
+                mainView.style.display = "none";
+                productView.style.display = "block";
+                setTimeout(() => { productView.style.opacity = "1"; }, 50);
+                document.getElementById("categories").scrollIntoView({ behavior: 'smooth' });
+            }
+
+            // 4. Open Hidden Admin Portal (No password, using hidden triggers)
+            function ToggleAdminOn() {
+                adminPanel.style.display = "block";
+                adminPanel.scrollIntoView({ behavior: "smooth" });
+                if (productView.style.display === "block" && currentCategory) showCategoryProducts(currentCategory);
+            }
+
+            document.addEventListener("keydown", (e) => {
+                if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "a") {
+                    e.preventDefault();
+                    ToggleAdminOn();
+                }
+            });
+
+            if (secretLink) secretLink.addEventListener("click", ToggleAdminOn);
+            if (closeBtn) {
+                closeBtn.addEventListener("click", () => {
+                    adminPanel.style.display = "none";
+                    if (productView.style.display === "block" && currentCategory) showCategoryProducts(currentCategory);
+                });
+            }
+
+            // 5. Form Upload Management Controller
+            if (uploadForm) {
+                uploadForm.addEventListener("submit", (e) => {
+                    e.preventDefault();
+                    const selectedCat = document.getElementById("form-category").value;
+                    const inputtedTitle = document.getElementById("form-title").value;
+                    const inputtedDesc = document.getElementById("form-desc").value;
+                    const imageFiles = document.getElementById("form-images").files;
+
+                    const imageArrayUrls = [];
+                    let processedCounter = 0;
+
+                    Array.from(imageFiles).forEach(file => {
+                        const fileReader = new FileReader();
+                        fileReader.onload = (event) => {
+                            imageArrayUrls.push(event.target.result);
+                            processedCounter++;
+                            if (processedCounter === imageFiles.length) {
+                                productsData[selectedCat].items.unshift({
+                                    name: inputtedTitle,
+                                    desc: inputtedDesc,
+                                    img: imageArrayUrls
+                                });
+                                uploadForm.reset();
+                                alert("Product successfully saved to store database!");
+                                if (productView.style.display === "block" && currentCategory === selectedCat) showCategoryProducts(selectedCat);
+                            }
+                        };
+                        fileReader.readAsDataURL(file);
+                    });
+                });
+            }
+
+            // 6. Navigation Triggers
+            document.querySelectorAll('.cat-card').forEach(card => {
+                card.addEventListener('click', () => {
+                    const cat = card.getAttribute('data-category');
+                    if (cat) showCategoryProducts(cat);
+                });
+            });
+
+            if (backBtn) {
+                backBtn.addEventListener("click", () => {
+                    productView.style.opacity = "0";
+                    setTimeout(() => {
+                        productView.style.display = "none";
+                        mainView.style.display = "block";
+                    }, 400);
+                });
+            }
+        });
+    </script>
+</body>
+</html>
